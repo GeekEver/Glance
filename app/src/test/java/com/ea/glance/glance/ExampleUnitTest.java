@@ -1,4 +1,4 @@
-package me.geekever.glance;
+package com.ea.glance.glance;
 
 import org.junit.Test;
 
