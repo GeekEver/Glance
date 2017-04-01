@@ -19,7 +19,6 @@ import butterknife.ButterKnife;
 public class ATMainActivity extends AppCompatActivity implements ATINewsView{
     @BindView(R.id.news_list)
     RecyclerView mRecyclerView;
-    List l;
     ATNewsPresenter presenter = new ATNewsPresenter(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +28,9 @@ public class ATMainActivity extends AppCompatActivity implements ATINewsView{
         presenter.loadNews();
     }
     @Override
-    public void initList(){
+    public void initList(List list) {
         LinearLayoutManager a = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(a);
-        mRecyclerView.setAdapter(new ATNewsAdapter(l,this));
-    }
-
-    @Override
-    public void setList(List l) {
-        this.l = l;
+        mRecyclerView.setAdapter(new ATNewsAdapter(list, this));
     }
 }

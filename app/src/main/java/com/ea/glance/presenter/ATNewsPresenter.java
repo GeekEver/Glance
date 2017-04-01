@@ -27,8 +27,7 @@ public class ATNewsPresenter {
 
             @Override
             public void onNext(EVNewsList evNewsList) {
-                mNewsView.setList(evNewsList.getNewsList());
-                mNewsView.initList();
+                mNewsView.initList(evNewsList.getNewsList());
             }
 
             @Override

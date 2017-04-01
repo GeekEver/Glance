@@ -37,7 +37,6 @@ public class ATNewsAdapter extends RecyclerView.Adapter<ATNewsAdapter.ATViewHold
                 int position = holder.getAdapterPosition();
                 //newses.get(position).getNewsContent();//获取正文
                 Toast.makeText(mContext,"sss",Toast.LENGTH_SHORT).show();
-
             }
         });
         return viewHolder;

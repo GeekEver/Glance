@@ -7,6 +7,5 @@ import java.util.List;
  */
 
 public interface ATINewsView {
-    void setList(List l);
-    void initList();
+    void initList(List l);
 }
