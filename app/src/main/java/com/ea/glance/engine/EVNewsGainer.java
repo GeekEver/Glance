@@ -21,7 +21,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class EVNewsGainer {
     private static final String BASE_URL="http://c.m.163.com";
     private static final int DEFAULT_TIMEOUT=5;
-    private EVNewsService mEVNewsService;
+    private EVINewsService mEVINewsService;
     private Retrofit mRetrofitForList;
     private Retrofit mRetrofitForDetail;
     private static final EVNewsGainer NEWS_GAINER=new EVNewsGainer();
@@ -46,18 +46,18 @@ public class EVNewsGainer {
     }
     public void getNews(int page,Observer<EVNewsList> observer){
         synchronized (this) {
-            mEVNewsService = mRetrofitForList.create(EVNewsService.class);
+            mEVINewsService = mRetrofitForList.create(EVINewsService.class);
         }
-        mEVNewsService.getNews(page)
+        mEVINewsService.getNews(page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
     }
     public void getNewsDetail(String docid,Observer<String> observer){
         synchronized (this) {
-            mEVNewsService = mRetrofitForDetail.create(EVNewsService.class);
+            mEVINewsService = mRetrofitForDetail.create(EVINewsService.class);
         }
-        mEVNewsService.getNewsDetail(docid)
+        mEVINewsService.getNewsDetail(docid)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);

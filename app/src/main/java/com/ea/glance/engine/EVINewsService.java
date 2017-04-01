@@ -10,7 +10,7 @@ import io.reactivex.*;
  * Created by ever on 2017/4/1.
  */
 
-public interface EVNewsService {
+public interface EVINewsService {
     @GET("http://c.m.163.com/nc/article/headline/T1348647909107/{id}-20.html")
     Observable<EVNewsList> getNews(@Path("id") int id );
 
